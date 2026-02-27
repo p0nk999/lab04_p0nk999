@@ -12,7 +12,7 @@ Heap::Heap(std::vector<int>::iterator start, std::vector<int>::iterator end){
   int n =vdata.size();
   if (n<=1)return;//1 or 0 element means that its valid
 
-  for(int i =(n/2)/2;i>=0;--i){
+  for(int i =(n-2)/2;i>=0;--i){
     int curr=i;
     while(true){
       //infinite loop
@@ -31,6 +31,7 @@ Heap::Heap(std::vector<int>::iterator start, std::vector<int>::iterator end){
         int temp=vdata[curr];
         vdata[curr]=vdata[min];
         vdata[min]=temp;
+
         curr=min;
       }
       else{
